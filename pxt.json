@@ -10,7 +10,8 @@
     "files": [
         "README.md",
         "curriculum/ms-solartracking/use.md",
-        "curriculum/ms-solartracking/modify.md"
+        "curriculum/ms-solartracking/modify.md",
+        "tutorial-info-cache.json"
     ],
     "testFiles": [
         "tests/test.ts",
