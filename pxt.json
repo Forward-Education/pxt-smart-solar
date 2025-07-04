@@ -8,10 +8,15 @@
         "fwd-servo-positional": "github:Forward-Education/pxt-fwd-modules/fwd-servo-positional#v1.0.2"
     },
     "files": [
-        "README.md"
+        "README.md",
+        "curriculum/ms-solartracking/use.md",
+        "curriculum/ms-solartracking/modify.md",
+        "tutorial-info-cache.json"
     ],
     "testFiles": [
-        "tests/test.ts"
+        "tests/test.ts",
+        "tests/ms-solartracking/use-final.ts",
+        "tests/ms-solartracking/modify-final.ts"
     ],
     "public": true,
     "targetVersions": {
