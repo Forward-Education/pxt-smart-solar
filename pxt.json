@@ -1,6 +1,6 @@
 {
     "name": "fwd-smart-solar",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Forward Education's Smart Solar Kit extension, micro:bit V2 only.",
     "license": "MIT",
     "dependencies": {
