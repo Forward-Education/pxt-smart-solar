@@ -1,4 +1,4 @@
-# pxt-fwd-solar
+# pxt-smart-solar
 
 Smart Solar Kit, by Forward Education.
 
