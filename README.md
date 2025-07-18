@@ -20,13 +20,13 @@ The solar panel is charging a battery and the energy meter is between it. When t
 
 ```blocks
 input.onButtonPressed(Button.A, function () {
-    basic.showNumber(sensors.current1.current())
+    basic.showNumber(fwdSensors.current1.current())
 })
 input.onButtonPressed(Button.B, function () {
-    basic.showNumber(sensors.voltage1.voltage())
+    basic.showNumber(fwdSensors.voltage1.voltage())
 })
 basic.forever(function () {
-    if (sensors.current1.isPastThreshold(100, sensors.ThresholdDirection.Over) && sensors.voltage1.isPastThreshold(2, sensors.ThresholdDirection.Over)) {
+    if (fwdSensors.current1.isPastThreshold(100, fwdEnums.OverUnder.Over) && fwdSensors.voltage1.isPastThreshold(2, fwdEnums.OverUnder.Over)) {
         basic.showIcon(IconNames.Happy)
     } else {
         basic.showIcon(IconNames.Sad)
@@ -67,9 +67,6 @@ input.onButtonPressed(Button.A, function () {
         optimalAngle = 270
     }
     fwdMotors.setAngle(fwdBase.leftServo, optimalAngle)
-})
-basic.forever(function () {
-
 })
 ```
 
