@@ -36,13 +36,13 @@ input.onButtonPressed(Button.B, function () {
     basic.pause(3000)
     fwdMotors.setAngle(
         fwdBase.leftServo,
-        fwdMotors.positionPresets(fwdMotors.ServoClockPositions.Pos0)
+        fwdMotors.positionPresets(fwdMotors.ServoClockPositions.Position0)
     )
     console.log(fwdMotors.getAngle(fwdBase.leftServo))
     basic.pause(3000)
     fwdMotors.setAngle(
         fwdBase.leftServo,
-        fwdMotors.positionPresets(fwdMotors.ServoClockPositions.Pos9)
+        fwdMotors.positionPresets(fwdMotors.ServoClockPositions.Position9)
     )
     console.log(fwdMotors.getAngle(fwdBase.leftServo))
     basic.pause(3000)
