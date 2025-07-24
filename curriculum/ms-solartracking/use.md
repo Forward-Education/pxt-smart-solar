@@ -1,6 +1,7 @@
 # Sun-Tracking Solar Panel - Use Tutorial
+
 ```package
-fwd-smart-solar=github:Forward-Education/pxt-smart-solar#v1.0.3
+fwd-smart-solar=github:Forward-Education/pxt-smart-solar#v1.1.0
 ```
 
 ```template
@@ -32,30 +33,35 @@ basic.forever(function () {
 ```
 
 ## Sun-Tracking Solar Panel - Use Tutorial @showdialog
+
 Today, we are going to build our own **sun-tracking solar panel**!
 
 <img src="https://raw.githubusercontent.com/Forward-Education/pxt-solar/main/curriculum/ms-solartracking/render.png" alt="Full sun-tracking solar panel render" style="display: block; width: 100%; margin:auto;">
 
 ## Step 1 @showdialog
+
 IMPORTANT! Make sure your Climate Action Kit Breakout Board is turned on and your micro:bit is plugged into your computer.
 
 <img src="https://raw.githubusercontent.com/Forward-Education/pxt-solar/main/curriculum/general-assets/pluganim.webp" alt="Plug micro:bit into USB port on computer" style="display: block; width: 40%; margin:auto;">
 
 ## Step 2 @showdialog
-Click the three dots beside the ``|Download|`` button, then click on _Connect Device_.
+
+Click the three dots beside the `|Download|` button, then click on _Connect Device_.
 Next, follow the steps to pair your micro:bit.
 
 <img src="https://raw.githubusercontent.com/Forward-Education/pxt-solar/main/curriculum/general-assets/pairmicrobitGIF.webp"  alt="Pairing gif" style="display: block; width: 60%; margin:auto;">
 
 ## Step 3
-Click the ``|Download|`` button to download the code to your micro:bit.
+
+Click the `|Download|` button to download the code to your micro:bit.
 
 ## Step 4
+
 Take a look at your physical project. Can you identify the different components of the build? What is the purpose of each part?
 
 ~hint Tell me more!
 
-This project has a(n): 
+This project has a(n):
 
 1. **solar panel** to capture and convert sunlight into electricity.
 
@@ -70,43 +76,46 @@ hint~
 ![Labeled solar panel](https://raw.githubusercontent.com/Forward-Education/pxt-solar/main/curriculum/ms-solartracking/render-labeled.png)
 
 ## Step 5
-Make sure you are not near any bright lights or windows. Then, observe the panel for a couple minutes. 
+
+Make sure you are not near any bright lights or windows. Then, observe the panel for a couple minutes.
 
 How would you describe its movement? Are there any patterns you notice?
 
 ~hint Tell me more!
 
-- As long as the solar panel isn't getting much light, it will rotate counterclockwise in small increments until it reaches an upper limit. Then, it will stop, return to its starting position and repeat the process. This pattern repeates indefinitely. 
+-   As long as the solar panel isn't getting much light, it will rotate counterclockwise in small increments until it reaches an upper limit. Then, it will stop, return to its starting position and repeat the process. This pattern repeates indefinitely.
 
-- While this is happening, there is a small diamond on the micro:bit's LED screen.
+-   While this is happening, there is a small diamond on the micro:bit's LED screen.
 
 hint~
 
 ## Step 6
+
 Now, position the panel towards a wall with a window. What happens to the panel's movement? How has it changed?
 
 ~hint Tell me more!
 
-- The solar panel will continue to rotate as described in the last step. 
+-   The solar panel will continue to rotate as described in the last step.
 
-- Once the solar panel faces a window or a bright enough light source, it should stay in a fixed position. 
+-   Once the solar panel faces a window or a bright enough light source, it should stay in a fixed position.
 
-- At this point, the LEDs will change to display a large diamond, indicating the panel has found a good source of light.
+-   At this point, the LEDs will change to display a large diamond, indicating the panel has found a good source of light.
 
 hint~
 
 ## Step 7
-This behaviour is controlled by a **conditional statement** in the code. Can you find it inside the ``||basic:forever||`` loop below?
+
+This behaviour is controlled by a **conditional statement** in the code. Can you find it inside the `||basic:forever||` loop below?
 
 ~hint Tell me more!
 
 **Conditional statements** are if/then rules that help our micro:bit make decisions on what to do. Here the code checks:
 
-- IF the ``||variables:power||`` is ``||logic:> 0.3||`` W (good light source), THEN the micro:bit shows a diamond icon.
+-   IF the `||variables:power||` is `||logic:> 0.3||` W (good light source), THEN the micro:bit shows a diamond icon.
 
-- ELSE (if power is 0.3 W or less), THEN a small diamond icon is displayed on the micro:bit and the ``||fwdMotors:leftServo||`` moves 10 degrees from its last position. If the last position was 180 degrees, the ``||fwdMotors:leftServo||`` will restart at 0 degress.
+-   ELSE (if power is 0.3 W or less), THEN a small diamond icon is displayed on the micro:bit and the `||fwdMotors:leftServo||` moves 10 degrees from its last position. If the last position was 180 degrees, the `||fwdMotors:leftServo||` will restart at 0 degress.
 
-This conditional statement is inside a ``||basic:forever||`` loop meaning it is repeatedly evaluated.
+This conditional statement is inside a `||basic:forever||` loop meaning it is repeatedly evaluated.
 
 hint~
 
@@ -133,17 +142,18 @@ basic.forever(function () {
 ```
 
 ## Step 8
-But what is "power"? In the lesson, we discussed that power is the rate at which voltage and current do work. In our program, we are determining ``||variables:power||`` in a **function** called ``||functions:calculatePower||``.
+
+But what is "power"? In the lesson, we discussed that power is the rate at which voltage and current do work. In our program, we are determining `||variables:power||` in a **function** called `||functions:calculatePower||`.
 
 ~hint Tell me more!
 
-- **Functions** are blocks of code that perform a specific task. They can be used to help keep our code more organized and reusable. 
+-   **Functions** are blocks of code that perform a specific task. They can be used to help keep our code more organized and reusable.
 
-- The ``||functions:calculatePower||`` function reads the ``||fwdSensors:voltage (V)||`` and ``||fwdSensors:current (mA)||`` from the Energy Sensor. 
+-   The `||functions:calculatePower||` function reads the `||fwdSensors:voltage (V)||` and `||fwdSensors:current (mA)||` from the Energy Sensor.
 
-- It then converts the ``||fwdSensors:current (mA)||`` reading from milliamps to amps by dividing ``||fwdSensors:current (mA)||`` by 1000. 
+-   It then converts the `||fwdSensors:current (mA)||` reading from milliamps to amps by dividing `||fwdSensors:current (mA)||` by 1000.
 
-- Finally, ``||variables:current_Amps||`` and ``||fwdSensors:voltage (V)||`` are multiplied together to get the ``||variables:power||`` value in Watts. 
+-   Finally, `||variables:current_Amps||` and `||fwdSensors:voltage (V)||` are multiplied together to get the `||variables:power||` value in Watts.
 
 hint~
 
@@ -155,17 +165,19 @@ function calculatePower () {
 ```
 
 ## Step 9
+
 Watch the **voltage** and **current** numbers that appear in the simulator as your panel sweeps or scans a given area. What do you notice about the values when the panel is facing the wall? What about when it is facing a window or light source?
 
 ~hint Tell me more!
 
-- Both numbers increase as the solar panel approaches a light source, indicating an increase in power.
+-   Both numbers increase as the solar panel approaches a light source, indicating an increase in power.
 
 hint~
 
 ![GIF of simulators](https://raw.githubusercontent.com/Forward-Education/pxt-solar/main/curriculum/ms-solartracking/energysensor-simulator-demo.gif)
 
 ## Step 10
+
 What are some strengths of this simple sweeping algorithm?
 
 ~hint Tell me more!
@@ -175,18 +187,22 @@ The sweeping algorithm is simple. The solar panel will scan a good range and set
 hint~
 
 ## Step 11
+
 What are some weaknesses or things this algorithm doesn't do very well?
 
 ~hint Tell me more!
 
-This algorithm will not necessarily seek the _best_ or _brightest_ position available. It scans, but will stop _as soon as it meets the minimum threshold_, even if there is a brighter spot a few degrees away. Likewise, if there is no spot that meets the threshold, it will scan forever, which isn't very efficient! 
+This algorithm will not necessarily seek the _best_ or _brightest_ position available. It scans, but will stop _as soon as it meets the minimum threshold_, even if there is a brighter spot a few degrees away. Likewise, if there is no spot that meets the threshold, it will scan forever, which isn't very efficient!
 
 hint~
 
 ## Reflection
+
 Before we wrap up:
-- List 2 new things you learned today.
-- What is one thing you want to learn more about?
+
+-   List 2 new things you learned today.
+-   What is one thing you want to learn more about?
 
 ## Finished
-Click the ``|Done|`` button to finish this tutorial.
+
+Click the `|Done|` button to finish this tutorial.
