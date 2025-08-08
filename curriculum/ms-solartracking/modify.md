@@ -1,7 +1,7 @@
 # Sun-Tracking Solar Panel - Modify Tutorial
 
 ```package
-fwd-smart-solar=github:Forward-Education/pxt-smart-solar#v1.1.0
+fwd-smart-solar=github:Forward-Education/pxt-smart-solar#v1.2.0
 ```
 
 ```template
