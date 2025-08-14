@@ -50,20 +50,20 @@ Today, we are going to customize and enhance our **sun-tracking solar panel**!
 
 We'll start with the base code from the 'Use' tutorial and modify it to make our panel smarter and more responsive.
 
-<img src="https://raw.githubusercontent.com/Forward-Education/pxt-solar/main/curriculum/ms-solartracking/render.png" alt="Full sun-tracking solar panel render" style="display: block; width: 100%; margin:auto;">
+<img src="https://raw.githubusercontent.com/Forward-Education/pxt-smart-solar/main/curriculum/ms-solartracking/render.png" alt="Full sun-tracking solar panel render" style="display: block; width: 100%; margin:auto;">
 
 ## Step 1 @showdialog
 
 IMPORTANT! Make sure your Climate Action Kit Breakout Board is turned on and your micro:bit is plugged into your computer.
 
-<img src="https://raw.githubusercontent.com/Forward-Education/pxt-solar/main/curriculum/general-assets/pluganim.webp" alt="Plug micro:bit into USB port on computer" style="display: block; width: 40%; margin:auto;">
+<img src="https://raw.githubusercontent.com/Forward-Education/pxt-smart-solar/main/curriculum/general-assets/pluganim.webp" alt="Plug micro:bit into USB port on computer" style="display: block; width: 40%; margin:auto;">
 
 ## Step 2 @showdialog
 
 Click the three dots beside the `|Download|` button, then click on _Connect Device_.
 Next, follow the steps to pair your micro:bit.
 
-<img src="https://raw.githubusercontent.com/Forward-Education/pxt-solar/main/curriculum/general-assets/pairmicrobitGIF.webp"  alt="Pairing gif" style="display: block; width: 60%; margin:auto;">
+<img src="https://raw.githubusercontent.com/Forward-Education/pxt-smart-solar/main/curriculum/general-assets/pairmicrobitGIF.webp"  alt="Pairing gif" style="display: block; width: 60%; margin:auto;">
 
 ## Step 3
 
@@ -75,7 +75,7 @@ Take a moment to observe your physical panel's movement and look at the starter 
 
 ~hint Tell me more!
 
-Recall from the "Use" tutorial:
+Recall from the 'Use' tutorial:
 
 -   The `||functions:calculatePower||` function reads the `||fwdSensors:voltage (V)||` and `||fwdSensors:current (mA)||` from the Energy Sensor and calculates the `||variables:power||`.
 
@@ -381,166 +381,6 @@ basic.forever(function () {
         // @highlight
         music.play(music.builtinPlayableSoundEffect(soundExpression.yawn), music.PlaybackMode.UntilDone)
         basic.showIcon(IconNames.No)
-    }
-})
-```
-
-## Optional Challenge: Displaying Power @showdialog
-
-What if you want to know the exact power reading at any position? Right now, you have to look at the simulators on your computer and do the calculation yourself.
-
-Let's add a feature to display the current `||variables:power||` value when you press button B.
-
-## Challenge Step 1
-
-Drag an `||input:on button B pressed||` block into your workspace. Inside this block, add a `||basic:show number||` block and place the `||variables:power||` variable inside it. Also, add a `||basic:pause (ms)||` block for 1000 milliseconds (1 second) after showing the number.
-
-```blocks
-// @hide
-function calculatePower () {
-    current_Amps = fwdSensors.current1.current() / 1000
-    power = current_Amps * fwdSensors.voltage1.voltage()
-}
-
-input.onButtonPressed(Button.B, function () {
-    calculatePower()
-    basic.showNumber(power)
-    basic.pause(1000)
-})
-```
-
-## Challenge Step 2
-
-To add context to the reading, let's add some text before and after it.
-
-Add a `||basic:show string||` block with "P:" before the `||basic:show number||` block. Add another `||basic:show string||` block with "W" after the `||basic:show number||` block.
-
-~hint Tell me more!
-
--   "P:" indicates that the power calculation will follow!
-
--   "W" represents the unit for power - Watts!
-
-hint~
-
-```blocks
-// @hide
-function calculatePower () {
-    current_Amps = fwdSensors.current1.current() / 1000
-    power = current_Amps * fwdSensors.voltage1.voltage()
-}
-
-input.onButtonPressed(Button.B, function () {
-    calculatePower()
-    // @highlight
-    basic.showString("P:")
-    basic.showNumber(power)
-    // @highlight
-    basic.showString("W")
-    basic.pause(1000)
-})
-```
-
-## Challenge Step 3
-
-Now, download this code to your micro:bit and test it out. Press Button B. What do you notice?
-
-~hint Tell me more!
-
-You might notice that when you press Button B, the `||basic:forever||` loop's animation seems to "fight" with your power display. The `||basic:forever||` loop is constantly trying to update the screen, which can make your power reading hard to see!
-
-hint~
-
-## Challenge Step 4
-
-To fix this "glitch," we need a way to tell the `||basic:forever||` loop to pause its regular display whenever we press Button B. We'll use a new **boolean variable** for this!
-
-Go to the `||variables:Variables||` category and click "Make a Variable." Name it 'displayingPower'.
-
-~hint Tell me more!
-
-A **boolean variable** is a special type of variable that can only hold one of two values: true or false. Think of it like a light switch that can only be "on" or "off."
-
-In our code, we'll use `||variables:displayingPower||` as a "flag" to track the state of our micro:bit's screen.
-
--   When Button B is pressed, we'll set `||variables:displayingPower||` to `||logic:true||` (like flipping the switch "on").
-
--   When the power reading is done, we'll set it back to false (flipping the switch "off").
-
-This "flag" will then be used by the `||basic:forever||` loop to decide whether it should display its normal icons or wait for the power display to finish.
-
-hint~
-
-## Challenge Step 5
-
-Drag a `||variables:set displayingPower to||` `||logic:false||` block into your workspace, inside the `||basic:on start||` block.
-
-```blocks
-current_Amps = 0
-power = 0
-// @highlight
-displayingPower = false
-fwdMotors.setAngle(fwdBase.leftServo, 0)
-```
-
-## Challenge Step 6
-
-Now, let's use this new variable inside our `||input:on button B pressed||` block.
-
-When Button B is pressed, first set `||variables:displayingPower||` to `||logic:true||`. Then, after the `||basic:pause||` block, set it back to `||logic:false||`. This tells the program to "turn off" the normal display, show the power, then "turn it back on."
-
-```blocks
-// @hide
-function calculatePower () {
-    current_Amps = fwdSensors.current1.current() / 1000
-    power = current_Amps * fwdSensors.voltage1.voltage()
-}
-
-input.onButtonPressed(Button.B, function () {
-    // @highlight
-    displayingPower = true
-    calculatePower()
-    basic.showString("P:")
-    basic.showNumber(power)
-    basic.showString("W")
-    basic.pause(1000)
-    // @highlight
-    displayingPower = false
-})
-```
-
-## Challenge Step 7
-
-Finally, we need to make sure the main `||basic:forever||` loop only runs its normal logic if we are _not currently displaying the power_.
-
-Drag an `||logic:if then||` block around all the existing code inside your `||basic:forever||` loop. Set its condition to `||variables:displayingPower||` `||logic:= false||`.
-
-```blocks
-// @hide
-function calculatePower () {
-    current_Amps = fwdSensors.current1.current() / 1000
-    power = current_Amps * fwdSensors.voltage1.voltage()
-}
-
-basic.forever(function () {
-    // @highlight
-    if (displayingPower == false) {
-        calculatePower()
-        if (power > 0.2) {
-            basic.showIcon(IconNames.Diamond)
-            music.play(music.builtinPlayableSoundEffect(soundExpression.twinkle), music.PlaybackMode.UntilDone)
-        } else if (power <= 0.2 && power > 0.01) {
-            basic.showIcon(IconNames.SmallDiamond)
-            music.play(music.tonePlayable(175, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
-            fwdMotors.setAngle(fwdBase.leftServo, fwdMotors.getAngle(fwdBase.leftServo) + 15)
-            if (fwdMotors.getAngle(fwdBase.leftServo) > 120) {
-                fwdMotors.setAngle(fwdBase.leftServo, 0)
-            }
-        } else {
-            fwdMotors.setAngle(fwdBase.leftServo, 0)
-            music.play(music.builtinPlayableSoundEffect(soundExpression.yawn), music.PlaybackMode.UntilDone)
-            basic.showIcon(IconNames.No)
-        }
     }
 })
 ```

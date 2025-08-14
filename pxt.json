@@ -9,14 +9,19 @@
     },
     "files": [
         "README.md",
+        "curriculum/general-assets/blank-solar-project.md",
         "curriculum/ms-solartracking/use.md",
         "curriculum/ms-solartracking/modify.md",
+        "curriculum/projects/current-monitor/tutorial.md",
+        "curriculum/projects/current-monitor/tutorial-v2.md",
         "tutorial-info-cache.json"
     ],
     "testFiles": [
         "tests/test.ts",
         "tests/ms-solartracking/use-final.ts",
         "tests/ms-solartracking/modify-final.ts"
+        "tests/proj-current-monitor/project-final.ts",
+        "tests/proj-current-monitor/project-v2-final.ts"
     ],
     "public": true,
     "targetVersions": {

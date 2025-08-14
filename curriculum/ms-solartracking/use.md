@@ -36,20 +36,20 @@ basic.forever(function () {
 
 Today, we are going to build our own **sun-tracking solar panel**!
 
-<img src="https://raw.githubusercontent.com/Forward-Education/pxt-solar/main/curriculum/ms-solartracking/render.png" alt="Full sun-tracking solar panel render" style="display: block; width: 100%; margin:auto;">
+<img src="https://raw.githubusercontent.com/Forward-Education/pxt-smart-solar/main/curriculum/ms-solartracking/render.png" alt="Full sun-tracking solar panel render" style="display: block; width: 100%; margin:auto;">
 
 ## Step 1 @showdialog
 
 IMPORTANT! Make sure your Climate Action Kit Breakout Board is turned on and your micro:bit is plugged into your computer.
 
-<img src="https://raw.githubusercontent.com/Forward-Education/pxt-solar/main/curriculum/general-assets/pluganim.webp" alt="Plug micro:bit into USB port on computer" style="display: block; width: 40%; margin:auto;">
+<img src="https://raw.githubusercontent.com/Forward-Education/pxt-smart-solar/main/curriculum/general-assets/pluganim.webp" alt="Plug micro:bit into USB port on computer" style="display: block; width: 40%; margin:auto;">
 
 ## Step 2 @showdialog
 
 Click the three dots beside the `|Download|` button, then click on _Connect Device_.
 Next, follow the steps to pair your micro:bit.
 
-<img src="https://raw.githubusercontent.com/Forward-Education/pxt-solar/main/curriculum/general-assets/pairmicrobitGIF.webp"  alt="Pairing gif" style="display: block; width: 60%; margin:auto;">
+<img src="https://raw.githubusercontent.com/Forward-Education/pxt-smart-solar/main/curriculum/general-assets/pairmicrobitGIF.webp"  alt="Pairing gif" style="display: block; width: 60%; margin:auto;">
 
 ## Step 3
 
@@ -73,7 +73,7 @@ This project has a(n):
 
 hint~
 
-![Labeled solar panel](https://raw.githubusercontent.com/Forward-Education/pxt-solar/main/curriculum/ms-solartracking/render-labeled.png)
+![Labeled solar panel](https://raw.githubusercontent.com/Forward-Education/pxt-smart-solar/main/curriculum/ms-solartracking/render-labeled.png)
 
 ## Step 5
 
@@ -174,7 +174,7 @@ Watch the **voltage** and **current** numbers that appear in the simulator as yo
 
 hint~
 
-![GIF of simulators](https://raw.githubusercontent.com/Forward-Education/pxt-solar/main/curriculum/ms-solartracking/energysensor-simulator-demo.gif)
+![GIF of simulators](https://raw.githubusercontent.com/Forward-Education/pxt-smart-solar/main/curriculum/ms-solartracking/energysensor-simulator-demo.gif)
 
 ## Step 10
 
