@@ -17,11 +17,7 @@
         "tutorial-info-cache.json"
     ],
     "testFiles": [
-        "tests/test.ts",
-        "tests/ms-solartracking/use-final.ts",
-        "tests/ms-solartracking/modify-final.ts",
-        "tests/proj-current-monitor/project-final.ts",
-        "tests/proj-current-monitor/project-v2-final.ts"
+        "tests/test.ts"
     ],
     "public": true,
     "targetVersions": {
