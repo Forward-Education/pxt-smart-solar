@@ -26,23 +26,18 @@ input.onButtonPressed(Button.A, function () {
 // posSetEnabled(servo: fwdBase.FwdServoClient, state: boolean): void
 // setAngle(servo: fwdBase.FwdServoClient, angle: number): void
 // getAngle(servo: fwdBase.FwdServoClient): number
-// positionPresets(position: ServoClockPositions): number
-// posIsEnabled(servo: fwdBase.FwdServoClient): boolean
-console.log("Servo enabled?: " + fwdMotors.posIsEnabled(fwdBase.leftServo))
 input.onButtonPressed(Button.B, function () {
     console.log("test start")
-    fwdMotors.posSetEnabled(fwdBase.leftServo, true)
-    console.log("enabled?: " + fwdMotors.posIsEnabled(fwdBase.leftServo))
     basic.pause(3000)
     fwdMotors.setAngle(
         fwdBase.leftServo,
-        fwdMotors.positionPresets(fwdMotors.ServoClockPositions.Position0)
+        90
     )
     console.log(fwdMotors.getAngle(fwdBase.leftServo))
     basic.pause(3000)
     fwdMotors.setAngle(
         fwdBase.leftServo,
-        fwdMotors.positionPresets(fwdMotors.ServoClockPositions.Position9)
+        45
     )
     console.log(fwdMotors.getAngle(fwdBase.leftServo))
     basic.pause(3000)

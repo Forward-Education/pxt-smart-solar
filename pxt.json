@@ -4,8 +4,8 @@
     "description": "Forward Education's Smart Solar Kit extension, micro:bit V2 only.",
     "license": "MIT",
     "dependencies": {
-        "fwd-energy": "github:Forward-Education/pxt-fwd-modules/fwd-energy#v1.0.10",
-        "fwd-servo-positional": "github:Forward-Education/pxt-fwd-modules/fwd-servo-positional#v1.0.10"
+        "fwd-energy": "github:Forward-Education/pxt-fwd-modules/fwd-energy#v1.1.2",
+        "fwd-servo-positional": "github:Forward-Education/pxt-fwd-modules/fwd-servo-positional#v1.1.2"
     },
     "files": [
         "README.md",
@@ -21,7 +21,7 @@
     ],
     "public": true,
     "targetVersions": {
-        "target": "8.0.22",
+        "target": "9.0.8",
         "targetId": "microbit"
     },
     "supportedTargets": [
