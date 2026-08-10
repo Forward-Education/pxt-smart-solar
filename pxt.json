@@ -14,7 +14,12 @@
         "curriculum/ms-solartracking/modify.md",
         "curriculum/projects/current-monitor/tutorial.md",
         "curriculum/projects/current-monitor/tutorial-v2.md",
-        "tutorial-info-cache.json"
+        "tutorial-info-cache.json",
+        "_locales/fr/curriculum/general-assets/blank-solar-project.md",
+        "_locales/fr/curriculum/ms-solartracking/modify.md",
+        "_locales/fr/curriculum/ms-solartracking/use.md",
+        "_locales/fr/curriculum/projects/current-monitor/tutorial-v2.md",
+        "_locales/fr/curriculum/projects/current-monitor/tutorial.md"
     ],
     "testFiles": [
         "tests/test.ts"
