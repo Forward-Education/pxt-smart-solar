@@ -40,7 +40,7 @@ Aujourd'hui, nous allons construire notre propre **panneau solaire qui suit le s
 
 ## Étape 1 @showdialog
 
-IMPORTANT ! Assure-toi que la plaque de connexion de ton kit d'Action pour le Climat est allumée et que ton micro:bit est branché à ton ordinateur.
+IMPORTANT ! Assure-toi que ta plaque de connexion est allumée et que ton micro:bit est branché à ton ordinateur.
 
 <img src="https://raw.githubusercontent.com/Forward-Education/pxt-smart-solar/main/curriculum/general-assets/pluganim.webp" alt="Branche le micro:bit dans le port USB de l'ordinateur" style="display: block; width: 40%; margin:auto;">
 

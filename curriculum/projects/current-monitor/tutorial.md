@@ -9,7 +9,7 @@ Today, you are going to code a monitor that measures the current (the flow of el
 <img src="https://raw.githubusercontent.com/Forward-Education/pxt-smart-solar/main/curriculum/projects/current-monitor/render.png" alt="Current monitor solar panel render" style="display: block; width: 100%; margin:auto;">
 
 ## Step 1 @showdialog
-IMPORTANT! Make sure your Climate Action Kit Breakout Board is turned on and your micro:bit is plugged into your computer.
+IMPORTANT! Make sure your Breakout Board is turned on and your micro:bit is plugged into your computer.
 
 <img src="https://raw.githubusercontent.com/Forward-Education/pxt-smart-solar/main/curriculum/general-assets/pluganim.webp" alt="Plug micro:bit into USB port on computer" style="display: block; width: 40%; margin:auto;">
 

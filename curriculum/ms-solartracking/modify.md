@@ -54,7 +54,7 @@ We'll start with the base code from the 'Use' tutorial and modify it to make our
 
 ## Step 1 @showdialog
 
-IMPORTANT! Make sure your Climate Action Kit Breakout Board is turned on and your micro:bit is plugged into your computer.
+IMPORTANT! Make sure your Breakout Board is turned on and your micro:bit is plugged into your computer.
 
 <img src="https://raw.githubusercontent.com/Forward-Education/pxt-smart-solar/main/curriculum/general-assets/pluganim.webp" alt="Plug micro:bit into USB port on computer" style="display: block; width: 40%; margin:auto;">
 

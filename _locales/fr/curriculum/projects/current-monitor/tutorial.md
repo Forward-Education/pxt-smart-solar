@@ -9,7 +9,7 @@ Aujourd'hui, tu vas coder un moniteur qui mesure le courant (le flux d'électric
 <img src="https://raw.githubusercontent.com/Forward-Education/pxt-smart-solar/main/curriculum/projects/current-monitor/render.png" alt="Rendu du panneau solaire avec moniteur de courant" style="display: block; width: 100%; margin:auto;">
 
 ## Étape 1 @showdialog
-IMPORTANT ! Assure-toi que la plaque de connexion de ton kit d'Action pour le Climat est allumée et que ton micro:bit est branché à ton ordinateur.
+IMPORTANT ! Assure-toi que ta plaque de connexion est allumée et que ton micro:bit est branché à ton ordinateur.
 
 <img src="https://raw.githubusercontent.com/Forward-Education/pxt-smart-solar/main/curriculum/general-assets/pluganim.webp" alt="Branche le micro:bit dans le port USB de l'ordinateur" style="display: block; width: 40%; margin:auto;">
 
